@@ -21,7 +21,6 @@ class MapSample extends StatefulWidget {
 }
 
 class MapSampleState extends State<MapSample> {
-  Completer<GoogleMapController> _controller = Completer();
   double _direction;
   BitmapDescriptor carIcon;
   Set<Marker> markers = Set();
@@ -60,10 +59,7 @@ class MapSampleState extends State<MapSample> {
         mapType: MapType.normal,
         zoomControlsEnabled: false,
         initialCameraPosition: _initialCameraPosition,
-        markers: markers,
-        onMapCreated: (GoogleMapController controller) {
-          _controller.complete(controller);
-        },
+        markers: markers
       ),
     );
   }
